@@ -72,9 +72,29 @@ func soal2() {
 	fmt.Println("number:", totalOutput["number"])
 }
 
+func soal3() {
+	soal := []string{">----------<", ">>---<---<<", ">><><>>><-<"}
+	for _, item := range soal {
+		hello := 0
+		jmlHello := 0
+		for _, str := range item {
+			if str == '>' {
+				hello++
+			} else if str == '<' {
+				jmlHello += 2 * hello
+			}
+		}
+		fmt.Println("Soal: ", item)
+		fmt.Printf("Jumlah hello yang diucapkan adalah %dx\n", jmlHello)
+	}
+
+}
+
 func main() {
 	fmt.Println("============ Soal 1 ============")
 	soal1()
 	fmt.Println("============ Soal 2 ============")
 	soal2()
+	fmt.Println("============ Soal 3 ============")
+	soal3()
 }
